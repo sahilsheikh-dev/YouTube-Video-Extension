@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 300px;
+  background: #010101;
+  color: #fafafa;
+  margin: 10px;
+  border-radius: 5px;
+}
+.switch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+label {
+  margin-left: 8px;
+}
+button {
+  background: #010101;
+  color: #fafafa;
+  padding: 5px 10px;
+  border: 1px solid #fafafa;
+  border-radius: 3px;
+}

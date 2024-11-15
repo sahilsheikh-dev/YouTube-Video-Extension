@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto Pause/Resume",
+  "version": "1.1",
+  "description": "Pauses and resumes YouTube videos based on tab or app focus with UI control.",
+  "permissions": ["tabs", "scripting", "activeTab", "storage"],
+  "background": {
+    "service_worker": "./assets/js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["./assets/js/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "./assets/img/icon.png",
+      "48": "./assets/img/icon.png",
+      "128": "./assets/img/icon.png"
+    }
+  },
+  "host_permissions": ["*://www.youtube.com/*"]
+}
