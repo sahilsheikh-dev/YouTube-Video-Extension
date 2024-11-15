@@ -38,3 +38,44 @@
           How many videos were paused/resumed.
           Total time spent watching YouTube.
  */
+
+/*
+  SAMPLE CODE - Enabler and disabler for Tab/App Switch Auto Play/Pause and Auto Skip YouTube Add
+          document.addEventListener("DOMContentLoaded", () => {
+            const tabToggle = document.getElementById("tab-auto-toggle");
+            const appToggle = document.getElementById("app-auto-toggle");
+            const adSkipToggle = document.getElementById("ad-skip-toggle");
+
+            // Load saved settings
+            chrome.storage.sync.get(
+              ["tabAutoPause", "appAutoPause", "adSkipperEnabled"],
+              (data) => {
+                tabToggle.checked = data.tabAutoPause ?? true;
+                appToggle.checked = data.appAutoPause ?? true;
+                adSkipToggle.checked = data.adSkipperEnabled ?? true;
+              }
+            );
+
+            // Save settings on toggle change
+            tabToggle.addEventListener("change", () => {
+              chrome.storage.sync.set({ tabAutoPause: tabToggle.checked });
+              chrome.storage.sync.get("tabAutoPause", async (settings) => {
+                console.log(settings.tabAutoPause);
+              });
+            });
+
+            appToggle.addEventListener("change", () => {
+              chrome.storage.sync.set({ appAutoPause: appToggle.checked });
+              chrome.storage.sync.get("appAutoPause", async (settings) => {
+                console.log(settings.appAutoPause);
+              });
+            });
+
+            adSkipToggle.addEventListener("change", () => {
+              chrome.storage.sync.set({ adSkipperEnabled: adSkipToggle.checked });
+              chrome.storage.sync.get("adSkipperEnabled", async (settings) => {
+                console.log(settings.adSkipperEnabled);
+              });
+            });
+          });
+*/
